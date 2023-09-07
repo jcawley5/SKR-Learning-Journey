@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+spec:
+  serviceName: postgres
+  selector:
+    matchLabels:
+      app: postgres
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers: # This is the container that will run the postgres image
+        - name: postgres
+          image: postgres:15.1
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          env: # Some environment variables to define a user
+            - name: POSTGRES_DB
+              value: "postgresdb"
+            - name: POSTGRES_USER
+              value: "admin"
+            - name: POSTGRES_PASSWORD
+              value: "password"
+          volumeMounts: # mount a volume to the path where postgres will store data
+            - name: data
+              mountPath: /var/lib/postgresql/data
+      volumes: # This is the volume that will be mounted to the container
+        - name: data
+          persistentVolumeClaim:
+            claimName: postgres-claim
