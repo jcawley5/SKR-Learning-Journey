@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  namespace: kyma-system
+  name: monitoring-hello-kyma
+  labels:
+    app: hello-kyma
+spec:
+  selector:
+    matchLabels:
+      app: hello-kyma
+  endpoints:
+    - port: http
+  namespaceSelector:
+    any: true

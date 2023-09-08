@@ -1,4 +1,4 @@
-## STEPS
+## Unit-7 Exercise STEPS
 
 Apply the file to the cluster:
 
