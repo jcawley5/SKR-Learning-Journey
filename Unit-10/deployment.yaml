@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-configmap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-configmap
+  template:
+    metadata:
+      labels:
+        app: test-configmap
+    spec:
+      containers:
+        - name: test-configmap
+          image: bash
+          envFrom:
+            - configMapRef:
+                name: name-greeting
+          command: ["echo"]
+          args: ["$(GREETING) $(FIRSTNAME)!"]

@@ -1,4 +1,4 @@
-## Unit-7 Exercise STEPS
+## Using Kubernetes Storage and StatefulSets
 
 Apply the file to the cluster:
 

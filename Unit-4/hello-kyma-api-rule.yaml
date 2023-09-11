@@ -1,0 +1,17 @@
+apiVersion: gateway.kyma-project.io/v1beta1
+kind: APIRule
+metadata:
+  name: hello-kyma
+spec:
+  gateway: kyma-system/kyma-gateway
+  host: hello-kyma
+  service:
+    name: hello-kyma-svc
+    port: 80
+    rules:
+      - path: /.*
+        methods: ["GET"]
+        mutators: []
+        accessStrategies:
+          - handler: allow
+            config: {}
