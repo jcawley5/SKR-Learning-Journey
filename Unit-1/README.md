@@ -51,5 +51,4 @@ kubectl describe pod my-pod -o yaml > my-pod.yaml
 
 ```
 kubectl label pod my-pod my-label=my-value
-``
 ```
