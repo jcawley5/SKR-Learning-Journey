@@ -24,9 +24,25 @@ kubectl get functions
 
 View in Kyma Dashboard
 
+#### Task 2: Create function in Kyma Dashboard
+
+Within namespace choose **Workloads > Functions** and then choose **Create Function**
+
+- Name: hello-kyma-function
+- Service: hello-kyma-function
+
+#### Create API Rule for function in Kyma Dashboard
+
+Within namespace choose **Discovery and Network > API Rules** and then choose **Create API Rule**
+
+- Name: hello-kyma-function-api
+- Service: hello-kyma-function
+- Port: 80
+- Host: hello-kyma-function-api.\<domain\>
+
 ### STEPS: Creating and Managing a Deployment
 
-#### Task 1: Create a deployment via the Kyma Dashboard
+#### Task 3: Create a deployment via the Kyma Dashboard
 
 Open the Kyma Dashboard, navigate to the deployments workload view and choose the Create Deployment button.
 
@@ -35,9 +51,9 @@ Open the Kyma Dashboard, navigate to the deployments workload view and choose th
 
 Choose the YAML tab to review your deployment manifest and choose the Create button and review created resource.
 
-#### Task 2: Update and apply the deployment manifest via kubectl
+#### Task 4: Update and apply the deployment manifest via kubectl
 
-Use kubectlto list your deployments.
+Use kubectl to list your deployments.
 
 ```
 kubectl get deployments
@@ -46,12 +62,12 @@ kubectl get deployments
 Enter command, which will create the file hello-kyma-deployoment.yaml with the deployment definition
 
 ```
-kubectl get deployment hello-kyma -o yaml >> hello-kyma-deployoment.yaml
+kubectl get deployment hello-kyma -o yaml >> hello-kyma-deployment.yaml
 ```
 
 Update the deployment to use a new version of the application. Change the current container image to the new version and set a change-causeto document the change.
 
-- image: ghcr.io/sap-samples/kyma-runtime-learning-journey/hello-kyma:1.0.0
+- image: ghcr.io/sap-samples/kyma-runtime-learning-journey/hello-kyma:1.0.1
 - annotation: kubernetes.io/change-cause: "Upgrade to new release v1.0.1"
 
 Save and apply the updated deployment manifest.
@@ -70,7 +86,7 @@ kubectl rollout history deployment hello-kyma
 kubectl describe deployment hello-kyma
 ```
 
-#### Task 3: Scale the deployment via kubectl
+#### Task 5: Scale the deployment via kubectl
 
 Scale the deployment to three replicas.
 
@@ -84,7 +100,7 @@ Verify it via kubectl.
 kubectl get deployment hello-kyma
 ```
 
-#### Task 4: Perform a rollback of the deployment via kubectl
+#### Task 6: Perform a rollback of the deployment via kubectl
 
 List the rollout history.
 
