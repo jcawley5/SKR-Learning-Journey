@@ -2,6 +2,13 @@
 
 ### STEPS
 
+- https://kubernetes.io/docs/tasks/tools/install-kubectl
+- https://github.com/int128/kubelogin
+- Set env variable
+  - Linux/MAC: export KUBECONFIG=<KUBECONFIG_FILE_PATH>
+  - Windows Powershell: $ENV:KUBECONFIG="<KUBECONFIG_FILE_PATH>"
+  - Windows DOS: set KUBECONFIG="<KUBECONFIG_FILE_PATH>"
+
 #### Interacting with the Kubernetes API via Kubectl
 
 ```
