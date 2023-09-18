@@ -13,7 +13,7 @@ kubectl get functions
 Create a serverless function using the following command:
 
 ```
-kubectl apply -n default -f https://raw.githubusercontent.com/kyma-runtime-learning-journey/main/unit_3/functions/hello-world-function.yaml
+kubectl apply -n default -f https://raw.githubusercontent.com/SAP-samples/kyma-runtime-learning-journey/main/unit_3/functions/hello-world-function.yaml
 ```
 
 List all current serverless functions again:
