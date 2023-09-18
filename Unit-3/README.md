@@ -119,3 +119,37 @@ List the rollout history again to verify the rollback.
 ```
 kubectl rollout history deployment hello-kyma
 ```
+
+#### Task 7: Using Helm to Package and Deploy your Application
+
+Perform a dry run
+
+```
+helm template hello-kyma .
+```
+
+Install the chart
+
+```
+helm install hello-kyma-helm .
+```
+
+Review deployments
+
+```
+kubectl get deployments
+```
+
+Update the values.yaml file and change the replicaCount to 2. Upgrade the chart
+
+```
+helm upgrade hello-kyma-helm .
+```
+
+Review deployments
+
+```
+kubectl get deployments
+```
+
+Review in Kyma dashboard
