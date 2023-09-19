@@ -18,6 +18,8 @@ Use kubectl to list your services.
 kubectl get svc
 ```
 
+Review in the Kyma dashboard under the namespace menu option **Discovery and Network > Services**
+
 #### Task 2: Expose the service with an API Rule
 
 Apply the API Rule manifest to the cluster.

@@ -4,7 +4,7 @@ metadata:
   name: hello-kyma-svc
 spec:
   selector:
-    app: "hello-kyma" # must match the pod's label
+    app: hello-kyma # must match the pod's label
   ports:
     - protocol: "TCP"
       port: 80 # service port

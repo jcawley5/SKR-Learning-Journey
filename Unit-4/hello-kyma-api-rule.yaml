@@ -3,15 +3,14 @@ kind: APIRule
 metadata:
   name: hello-kyma
 spec:
-  gateway: kyma-system/kyma-gateway
+  gateway: kyma-gateway.kyma-system.svc.cluster.local
   host: hello-kyma
+  rules:
+    - accessStrategies:
+        - handler: allow
+      methods:
+        - GET
+      path: /.*
   service:
     name: hello-kyma-svc
     port: 80
-    rules:
-      - path: /.*
-        methods: ["GET"]
-        mutators: []
-        accessStrategies:
-          - handler: allow
-            config: {}
