@@ -26,14 +26,15 @@ View in Kyma Dashboard
 
 #### Task 2: Create function in Kyma Dashboard
 
-Within namespace choose **Workloads > Functions** and then choose **Create Function**
+Within namespace choose **Workloads > Functions** and then choose **Create Function**. Use the following values and choose **Create**.
 
 - Name: hello-kyma-function
-- Service: hello-kyma-function
+- Language: Javascript
+- Runtime: Node.js 18
 
 #### Create API Rule for function in Kyma Dashboard
 
-Within namespace choose **Discovery and Network > API Rules** and then choose **Create API Rule**
+Within namespace choose **Discovery and Network > API Rules** and then choose **Create API Rules=**. Use the following values and choose **Create**.
 
 - Name: hello-kyma-function-api
 - Service: hello-kyma-function
@@ -65,10 +66,10 @@ Enter command, which will create the file hello-kyma-deployoment.yaml with the d
 kubectl get deployment hello-kyma -o yaml >> hello-kyma-deployment.yaml
 ```
 
-Update the deployment to use a new version of the application. Change the current container image to the new version and set a change-causeto document the change.
+Update the deployment to use a new version of the application. Change the current container image to the new version and set a change-cause to document the change.
 
-- image: ghcr.io/sap-samples/kyma-runtime-learning-journey/hello-kyma:1.0.1
-- annotation: kubernetes.io/change-cause: "Upgrade to new release v1.0.1"
+- image: ghcr.io/sap-samples/kyma-runtime-learning-journey/hello-kyma:1.1.0
+- annotation: kubernetes.io/change-cause: "Upgrade to new release v1.1.0"
 
 Save and apply the updated deployment manifest.
 

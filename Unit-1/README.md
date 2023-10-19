@@ -2,6 +2,8 @@
 
 ### STEPS
 
+> The kubeconfig can be found on the BTP Cockpit on the **Overview** menu option under **Kyma Environment**
+
 - https://kubernetes.io/docs/tasks/tools/install-kubectl
 - https://github.com/int128/kubelogin
 - Set env variable
@@ -36,16 +38,11 @@ kubectl create -f my-pod.yaml
 ```
 
 ```
-kubectl create -f https://raw.githubusercontent.com/SAP-samples/
-kyma-runtime-learning-journey/main/unit_1/my-pod.yaml
+kubectl create -f https://raw.githubusercontent.com/SAP-samples/kyma-runtime-learning-journey/main/unit_1/my-pod.yaml
 ```
 
 ```
 kubectl apply -f my-pod.yaml
-```
-
-```
-kubectl delete pod my-pod
 ```
 
 ```
@@ -58,4 +55,8 @@ kubectl describe pod my-pod -o yaml > my-pod.yaml
 
 ```
 kubectl label pod my-pod my-label=my-value
+```
+
+```
+kubectl delete pod my-pod
 ```
