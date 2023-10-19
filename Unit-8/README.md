@@ -30,30 +30,6 @@ kubectl port-forward -n monitoring-exercise svc/hello-kyma 8080:8080
 
 ### Task 2
 
-Create a new namespace called monitoring-exercise:
-
-```
-kubectl create namespace monitoring-exercise
-```
-
-Create a new deployment called hello-kyma in the monitoring-exercise namespace:
-
-```
-kubectl apply -n monitoring-exercise -f https://raw.githubusercontent.com/SAP-samples/kyma-runtime-learning-journey/main/unit_8/hello-kyma-deployment-svc.yaml
-```
-
-Verify the successful creation of the deployment:
-
-```
-kubectl get deployments -n monitoring-exercise
-```
-
-Port-forward the hello-kyma service to your local machine:
-
-```
-kubectl port-forward -n monitoring-exercise svc/hello-kyma 8080:8080
-```
-
 Configure Prometheus to scrape the metrics endpoint and use Prometheus UI to query the metrics.
 
 Apply the ServiceMonitor resource to the kyma-system namespace:

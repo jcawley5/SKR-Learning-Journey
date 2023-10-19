@@ -53,3 +53,27 @@ You can also play around with the postgres database. You can connect to it local
 ```
 kubectl port-forward postgres-0 5432:5432
 ```
+
+Using psql to connect
+
+```
+psql postgres://admin:password@localhost:5432/postgresdb
+```
+
+Create a table
+
+```
+create table dummy_table(name varchar(20),address text,age int);
+```
+
+Insert data into the table
+
+```
+insert into dummy_table values('XYZ','location-A',25);
+```
+
+Query data with select
+
+```
+select * from dummy_table;
+```

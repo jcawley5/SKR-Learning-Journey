@@ -26,10 +26,10 @@ spec:
               value: "admin"
             - name: POSTGRES_PASSWORD
               value: "password"
-          volumeMounts: # mount a volume to the path where postgres will store data
-            - name: data
-              mountPath: /var/lib/postgresql/data
-      volumes: # This is the volume that will be mounted to the container
-        - name: data
-          persistentVolumeClaim:
-            claimName: postgres-claim
+      #     volumeMounts: # mount a volume to the path where postgres will store data
+      #       - name: data
+      #         mountPath: /var/lib/postgresql/data
+      # volumes: # This is the volume that will be mounted to the container
+      #   - name: data
+      #     persistentVolumeClaim:
+      #       claimName: postgres-claim
