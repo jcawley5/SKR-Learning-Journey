@@ -42,6 +42,7 @@ To complete the exercies enable the modules as shown
   - btp-operator
   - nats
   - serverless
+  - application-connector
 
 ![Choose Modules](./assets/module2.png)
 
