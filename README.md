@@ -12,6 +12,7 @@ Exercise steps for the SAP Learning Journey - [Deliver Side-by-Side Extensibilit
 - [Unit 8 - Performing Observability and Monitoring](./Unit-8/README.md)
 - [Unit 9 - Using SAP BTP Service Management](./Unit-9/README.md)
 - [Unit 10 - Using ConfigMaps and Secrets](./Unit-10/README.md)
+- [Unit 11 - Working with Helm Charts - Unofficial Extra Unit](./Unit-11/readme.md)
 
 ## Provisioning
 
